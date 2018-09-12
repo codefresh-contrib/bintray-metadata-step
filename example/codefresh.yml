@@ -1,12 +1,16 @@
 version: '1.0'
 steps:
-  BuildingDockerImage:
+  MyAppDockerImage:
     title: Building Docker Image
     type: build
     image_name: trivial-web
     working_directory: ./example/
     tag: '${{CF_SHORT_REVISION}}'
     dockerfile: Dockerfile
+    metadata: 
+      set: 
+        - build_style: non-multi-stage
+        - ci_solution: codefresh
   PushingToRegistry:
     type: push
     title: Pushing To Bintray Registry
@@ -15,16 +19,17 @@ steps:
     registry: bintray 
   ExtraBintrayAttributes:
     title: "Changing Bintray attributes"
-    image: kostis-codefresh/bintray-metadata-step:master
+    image:  r.cfcr.io/kostis-codefresh/bintray-metadata-step:master
     environment:
       - BINTRAY_USER=${{B_USER}}
       - BINTRAY_TOKEN=${{B_TOKEN}}
-      - DOCKER_IMAGE=${{CF_REPO_NAME}}
-      - NEW_VERSION=${{CF_SHORT_REVISION}}
+      - DOCKER_IMAGE=trivial-web
+      - DOCKER_TAG=${{CF_SHORT_REVISION}}
       - README_FILE=unused
       - VERSION_RELEASE_NOTES=unused
       - IMAGE_LABELS='["one","two"]'
-      - VERSION_ATTRIBUTES=unused
+      - IMAGE_ATTRIBUTES=unused
+
 
    
 

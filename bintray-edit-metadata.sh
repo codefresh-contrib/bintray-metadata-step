@@ -40,7 +40,7 @@ if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ] && [ "$4" != "" ] && [ "$5
     VERSION_ATTRIBUTES=$8
 else
     
-    echo "USAGE\n binary-metadata.sh [BINTRAY_USER] [BINTRAY_TOKEN] [DOCKER_IMAGE] [DOCKER_TAG] [README_FILE] [VERSION_RELEASE_NOTES] [IMAGE_LABELS] [VERSION_ATTRIBUTES]"
+    echo "USAGE\n binary-metadata.sh [BINTRAY_USER] [BINTRAY_TOKEN] [DOCKER_IMAGE] [DOCKER_TAG] [README_FILE] [VERSION_RELEASE_NOTES] [IMAGE_LABELS] [IMAGE_ATTRIBUTES]"
     echo "\t [BINTRAY_USER] - Your bintray user name"
     echo "\t [BINTRAY_TOKEN] - Your bintray api token"
     echo "\t [DOCKER_IMAGE] - Docker image name which will be updated"
@@ -48,7 +48,7 @@ else
     echo "\t [README_FILE] - path of readme file (markdown)"
     echo "\t [VERSION_RELEASE_NOTES] - Path of release notes (markdown)"
     echo "\t [IMAGE_LABELS] - Bintray labels"
-    echo "\t [VERSION_ATTRIBUTES] - Bintray attributes"
+    echo "\t [IMAGE_ATTRIBUTES] - Bintray attributes"
     exit 1;
 fi
 
