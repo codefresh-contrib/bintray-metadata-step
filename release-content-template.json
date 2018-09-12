@@ -1,0 +1,6 @@
+{
+  "bintray": {
+    "syntax": "markdown",
+    "content": "Sample release notes from Codefresh"
+  }
+}
