@@ -21,10 +21,13 @@ mainloop(){
     echo "[BINTRAY EDIT] Changing package readme"
     http -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN POST  https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE/readme < file-content-template.json
 
-
     #Updating project attributes
     echo "[BINTRAY EDIT] Changing package attributes"
     echo '[{"name": "Codefresh1", "values": ["64.0"]},{"name":"Codefresh2","values":["one","two"]}]' | http -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN POST https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE/attributes
+
+    #Sample release notes
+    echo "[BINTRAY EDIT] Changing version release notes"
+    http -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN POST  https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE/versions/$DOCKER_TAG/release_notes < release-content-template.json
    
    
 }

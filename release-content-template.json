@@ -1,6 +1,6 @@
 {
   "bintray": {
     "syntax": "markdown",
-    "content": "Sample release notes from Codefresh"
+    "content": "Sample release notes from Codefresh. These could be provided by the User during the build or read from a file in the repo."
   }
 }

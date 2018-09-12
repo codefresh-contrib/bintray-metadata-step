@@ -1,6 +1,6 @@
 {
   "bintray": {
     "syntax": "markdown",
-    "content": "Sample README file from Codefresh"
+    "content": "Sample README file from Codefresh. This file could contain a description of the project in Markdown."
   }
 }
