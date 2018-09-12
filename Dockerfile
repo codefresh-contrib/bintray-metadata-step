@@ -6,4 +6,6 @@ COPY bintray-edit-metadata.sh file-content-template.json release-content-templat
 
 RUN chmod +x /app/bintray-edit-metadata.sh
 
+ENTRYPOINT []
+
 CMD /app/bintray-edit-metadata.sh $BINTRAY_USER $BINTRAY_TOKEN $DOCKER_IMAGE $DOCKER_TAG $README_FILE $VERSION_RELEASE_NOTES $IMAGE_LABELS $VERSION_ATTRIBUTES
