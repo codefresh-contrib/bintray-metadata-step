@@ -24,7 +24,7 @@ mainloop(){
 
     #Updating project attributes
     echo "[BINTRAY EDIT] Changing version attributes"
-    echo '[{"name": "mine", "values": ["64.0"]}]' | http -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN POST https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE/versions/$DOCKER_TAG/attributes
+    echo '[{"name": "Codefresh1", "values": ["64.0"]},{"name":"Codefresh2","values":["one","two"]}]' | http -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN POST https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE/versions/$DOCKER_TAG/attributes
    
    
 }
