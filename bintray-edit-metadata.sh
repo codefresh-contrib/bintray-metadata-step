@@ -11,11 +11,11 @@ mainloop(){
     
     #Updating description
     echo "[BINTRAY EDIT] Changing package description"
-    http --ignore-stdin --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN PATCH https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE desc="Custom metadata set by $CF_BUILD_URL" vcs_url=http://codefresh.io
+    http --ignore-stdin -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN PATCH https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE desc="Custom metadata set by $CF_BUILD_URL" vcs_url=http://codefresh.io
 
     #Updating project labels
     echo "[BINTRAY EDIT] Changing package labels"
-    http --ignore-stdin -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN PATCH https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE labels:=$IMAGE_LABELS
+    http --ignore-stdin -v --check-status -a $BINTRAY_USER:$BINTRAY_TOKEN PATCH https://api.bintray.com/packages/$BINTRAY_USER/docker/$DOCKER_IMAGE labels:='["first", "second"]'
 
     #Sample Readme
     echo "[BINTRAY EDIT] Changing package readme"
